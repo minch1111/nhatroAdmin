@@ -2,7 +2,7 @@ import api from "../config/api"
 
 const authServices={
     login(user){
-        return fetch(`${api}/auth/login`,{
+        return fetch(`${api}/dang-nhap`,{
             method:'POST',
             headers:{
                 'Content-Type':'application/json'

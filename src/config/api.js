@@ -1,2 +1,2 @@
-const api = 'https://blooming-mountain-13837.herokuapp.com/api';
+const api = 'https://phong-tro-vn.herokuapp.com/admin/';
 export default api

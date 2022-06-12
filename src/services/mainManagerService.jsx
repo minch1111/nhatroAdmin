@@ -1,4 +1,9 @@
 import api from "../config/api"
+import React, { useContext } from 'react'
+
+
+
+
 
 const mainManageService = {
     getAllStaff() {
@@ -118,8 +123,8 @@ const mainManageService = {
     getListRate() {
         return fetch(`${api}/media/rate`).then(res => res.json())
     },
-    getRateDetailById(id){
-        return fetch(`${api}/media/rate/${id}`).then(res=>res.json())
+    getRateDetailById(id) {
+        return fetch(`${api}/media/rate/${id}`).then(res => res.json())
     },
     repRate(id, form) {
         return fetch(`${api}/media/rate/rep/${id} `, {
@@ -130,38 +135,124 @@ const mainManageService = {
             body: JSON.stringify(form)
         }).then(res => res.json())
     },
-    removeRepRate(id){
-        return fetch(`${api}/media/rate/delete/${id}`,{
-            method:'DELETE',
-            headers:{
-                'Content-Type':'application/json'
+    removeRepRate(id) {
+        return fetch(`${api}/media/rate/delete/${id}`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json'
             }
-        }).then(res=>res.json())
+        }).then(res => res.json())
     },
-    updateRepRate(id,form){
-        return fetch(`${api}/media/rate/update/${id}`,{
-            method:'PUT',
-            headers:{
-                'Content-Type':'application/json'
+    updateRepRate(id, form) {
+        return fetch(`${api}/media/rate/update/${id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
             },
-            body:JSON.stringify(form)
-        }).then(res=>res.json())
+            body: JSON.stringify(form)
+        }).then(res => res.json())
     },
-    removeReport(id){
-        return fetch(`${api}/order/staff/statistical/${id}`,{
-            method:'DELETE',
-            headers:{
-                'Content-Type':'application/json'
+    removeReport(id) {
+        return fetch(`${api}/order/staff/statistical/${id}`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json'
             }
-        }).then(res=>res.json())
+        }).then(res => res.json())
     }
     ,
-    home(){
-        return fetch(`${api}/all`).then(res=>res.json())
+    home() {
+        return fetch(`${api}/all`).then(res => res.json())
     },
-    getListCustomer(){
-        return fetch(`${api}/account/user`).then(res=>res.json())
-    }
+    getListCustomer() {
+        let user = JSON.parse(localStorage.getItem('tokenAdmin'))
+        return fetch(`${api}cho-gui-duyet-tin-tuc`, {
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${user.accessToken}`
+            }
+        }).then(res => res.json())
+    },
+    getDetailNews(id) {
+        let user = JSON.parse(localStorage.getItem('tokenAdmin'))
+        return fetch(`${api}chi-tiet-tin-tuc/${id}`, {
+            // method:'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${user.accessToken}`
+            }
+        }).then(res => res.json())
+    },
+    confirmNews(id) {
+        let user = JSON.parse(localStorage.getItem('tokenAdmin'))
+        console.log('user', user)
+        return fetch(`${api}chap-nhan-tin-tuc`, {
+            method:'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${user.accessToken}`
+            },
+            body:JSON.stringify({
+                _id:id
+            })
+        }).then(res => res.json())
+    },
+    rejectNews(id,reason) {
+        let user = JSON.parse(localStorage.getItem('tokenAdmin'))
+        console.log('user', user)
+        return fetch(`${api}tu-choi-tin-tuc`, {
+            method:'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${user.accessToken}`
+            },
+            body:JSON.stringify({_id:id,reason:reason})
+        }).then(res => res.json())
+    },
+    getListNewsReport(){
+        let user = JSON.parse(localStorage.getItem('tokenAdmin'))
+        return fetch(`${api}danh-sach-bao-cao`, {
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${user.accessToken}`
+            }
+        }).then(res => res.json())
+    },
+    getDetailNewsReported(id) {
+        let user = JSON.parse(localStorage.getItem('tokenAdmin'))
+        return fetch(`${api}chi-tiet-bao-cao/${id}`, {
+            // method:'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${user.accessToken}`
+            }
+        }).then(res => res.json())
+    },
+    confirmNewsReported(id,reason) {
+        let user = JSON.parse(localStorage.getItem('tokenAdmin'))
+        console.log('user', user)
+        return fetch(`${api}xac-nhan-bao-cao`, {
+            method:'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${user.accessToken}`
+            },
+            body:JSON.stringify({
+                idReport:id,
+                reason:reason
+            })
+        }).then(res => res.json())
+    },
+    rejectNewsReported(id) {
+        let user = JSON.parse(localStorage.getItem('tokenAdmin'))
+        return fetch(`${api}tu-choi-bao-cao/${id}`, {
+            method:'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${user.accessToken}`
+            },
+        }).then(res => res.json())
+    },
 
 }
 

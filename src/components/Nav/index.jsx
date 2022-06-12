@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import logo from "../../assets/img/logoPet.png"
+import logo from "../../assets/img/logo.png"
 let $ = window.$
 export default function Nav() {
 
@@ -20,7 +20,7 @@ export default function Nav() {
                     <div className="sidebar-brand-icon">
                         <img src={logo} alt="" style={{ width: '24px' }} />
                     </div>
-                    <div className="sidebar-brand-text mx-3" style={{fontSize:"10px !important"}}>QUẢN LÍ CHO THUÊ PHÒNG TRỌ SINH VIÊN</div>
+                    <div style={{fontSize: '10px'}}>QUẢN LÍ CHO THUÊ PHÒNG TRỌ SINH VIÊN</div>
                 </Link>
                 {/* Divider */}
                 < hr className="sidebar-divider my-0" />
@@ -45,15 +45,19 @@ export default function Nav() {
                     <div id="collapseTwo" className="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                         <div className="bg-white py-2 collapse-inner rounded">
                             <h6 className="collapse-header">Tasks:</h6>
-                            <Link  className="collapse-item" to="/main-manager/customer">Khách Hàng</Link>
-                            <Link  className="collapse-item" to="/main-manager/staffs">Nhân Viên</Link>
+                            <Link  className="collapse-item" to="/main-manager/news">Bài Đăng</Link>
+                            <Link className='collapse-item' to="/main-manager/news-reports" >Bài đăng bị báo cáo</Link>
+                            {/* <Link  className="collapse-item" to="/main-manager/staffs">Nhân Viên</Link>
                             <Link className="collapse-item" to="/main-manager/permission">Chức vụ</Link>
                             <Link className="collapse-item" to="/main-manager/report">Thu Chi</Link>
-                            <Link className="collapse-item" to="/main-manager/vouchers" > Voucher </Link>
+                            <Link className="collapse-item" to="/main-manager/vouchers" > Voucher </Link> */}
 
                         </div>
                     </div>
                 </li >
+                <div class="text-center d-none d-md-inline">
+                    <button class="rounded-circle border-0" id="sidebarToggle"></button>
+                </div>
                 {/* Nav Item - Utilities Collapse Menu */}
                 {/* <li li className="nav-item" >
                     <a className="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
@@ -100,7 +104,8 @@ export default function Nav() {
                 <br />
                 <div class="text-center d-none d-md-inline">
                     <button class="rounded-circle border-0" id="sidebarToggle"></button>
-                </div> */}
+                </div>
+                */}
                 {/* Sidebar Message */}
                 {/* <div class="sidebar-card d-none d-lg-flex">
               <img class="sidebar-card-illustration mb-2" src="img/undraw_rocket.svg" alt="...">

@@ -20,7 +20,7 @@ export const Context = createContext();
 
 function App() {
   const [user, setUser] = useState(
-    JSON.parse(localStorage.getItem("loginAdmin"))
+    JSON.parse(localStorage.getItem("tokenAdmin"))
   );
   // const [brands,setBrands] = useState(localStorage.getItem('brands'))
   const [loginError, setLoginError] = useState();
@@ -29,9 +29,10 @@ function App() {
       let res = await authServices.login(form);
       // console.log(`token`, res.accessToken)
       if (res?.success) {
-        localStorage.setItem("loginAdmin", JSON.stringify(res.customer));
-        localStorage.setItem("token", JSON.stringify(res.accessToken));
-        setUser(JSON.parse(localStorage.getItem("loginAdmin")));
+        // localStorage.setItem("loginAdmin", JSON.stringify(res.));
+        console.log('res', res)
+        localStorage.setItem("tokenAdmin", JSON.stringify(res.data));
+        setUser(JSON.parse(localStorage.getItem("tokenAdmin")));
         setLoginError();
       } else {
         setLoginError(res?.message);

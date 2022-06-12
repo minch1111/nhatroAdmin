@@ -7,10 +7,13 @@ import Permission from './components/Permission'
 import ReportDetailMonth from './components/ReportDetailMonth'
 import ReportSale from './components/ReportSale'
 import Vouchers from './components/Vouchers'
+import NewsDetail from './components/NewsDetail'
+import ListNewsReport from './components/ListNewsReport'
+import NewsDetailReported from './components/NewsDetailReported'
 
 export default function MainManage() {
-    let {user} = useContext(Context);
-    if(user.idPermission!=='61aed3c47812fa068eee6d4f') return <Redirect to="/" />
+    // let {user} = useContext(Context);
+    // if(user.idPermission!=='61aed3c47812fa068eee6d4f') return <Redirect to="/" />
     return (
         <div className="container-fluid">
             <div className="row">
@@ -24,7 +27,11 @@ export default function MainManage() {
 
                     <Route path="/main-manager/permission" exact component={Permission} />
 
-                    <Route path="/main-manager/customer" exact component={ListCustomer} />
+                    <Route path="/main-manager/news" exact component={ListCustomer} />
+                    <Route path="/main-manager/news/:slug" component={NewsDetail} />
+                    <Route path="/main-manager/news-reports" exact component={ListNewsReport} />
+                    <Route path="/main-manager/news-reports/:slug"  component={NewsDetailReported} />
+
                 </Switch>
 
             </div>
