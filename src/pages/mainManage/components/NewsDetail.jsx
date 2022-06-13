@@ -39,7 +39,7 @@ export default function NewsDetail() {
       let res = await mainManageService.rejectNews(detail?._id, reason)
       if (res.success) {
         alert("Đã từ chối tin đăng");
-        $(".close").onclick()
+        $(".close").click()
         let res1 = await mainManageService.getDetailNews(slug)
         setDetail(res1.data)
       }
