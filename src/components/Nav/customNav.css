@@ -1,0 +1,7 @@
+.toggled .hide{
+  display: none;
+}
+
+.hide{
+  display: block;
+}

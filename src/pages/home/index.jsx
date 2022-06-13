@@ -4,6 +4,7 @@ import {Line} from 'react-chartjs-2'
 import {CategoryScale} from 'chart.js'
 import Chart from 'chart.js/auto'
 import mainManagerService from '../../services/mainManagerService'
+import bGcustom from "../../assets/img/bg-custom.png"
 
 export default function Home() {
     let [statical,setStatical]=useState()
@@ -43,6 +44,9 @@ export default function Home() {
       console.log(`month`, statical?.statistical[0]._id.month)
     return (
         <div className="container-fluid">
+            <div className="custom p-4" style={{height:"500px"}}>
+                <img src={bGcustom} className="w-100 h-100" alt="" />
+            </div>
             {/* Page Heading */}
             {/* <div className="d-sm-flex align-items-center justify-content-between mb-4">
                 <h1 className="h3 mb-0 text-gray-800">Thống kê</h1>

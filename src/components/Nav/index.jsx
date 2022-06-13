@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import logo from "../../assets/img/logo.png"
+import "../Nav/customNav.css"
+
 let $ = window.$
 export default function Nav() {
 
@@ -20,7 +22,7 @@ export default function Nav() {
                     <div className="sidebar-brand-icon">
                         <img src={logo} alt="" style={{ width: '24px' }} />
                     </div>
-                    <div style={{fontSize: '10px'}}>QUẢN LÍ CHO THUÊ PHÒNG TRỌ SINH VIÊN</div>
+                    <div className='hide' style={{fontSize: '10px'}}>QUẢN LÍ CHO THUÊ PHÒNG TRỌ SINH VIÊN</div>
                 </Link>
                 {/* Divider */}
                 < hr className="sidebar-divider my-0" />
