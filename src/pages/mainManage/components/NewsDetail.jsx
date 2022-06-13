@@ -62,12 +62,12 @@ export default function NewsDetail() {
   return (
     <div className="p-2 col-md-12 mx-2">
       <div className='row bg-light mx-1'>
-        <div className="col-md-12">
+        <div className="col-md-12 d-flex mb-3">
           <Link to="/main-manager/news" className='btn btn-warning'>
             Quay lại
           </Link>
 
-          Chi tiết bài đăng
+          <div className="ml-2">Chi tiết bài đăng</div>
         </div>
         <div className="col-md-12">
           <div className="row">

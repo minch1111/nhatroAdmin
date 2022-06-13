@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react'
-import { useParams } from 'react-router'
+import { useHistory, useParams } from 'react-router'
 import { Link } from 'react-router-dom'
 import mainManageService from '../../../services/mainManagerService'
 let $ = window.$
@@ -10,6 +10,7 @@ export default function NewsDetailReported() {
   let { slug } = useParams()
   const [report, setReport] = useState()
   const [reason, setReason] = useState("")
+  const history = useHistory();
 
   useEffect(async () => {
     let res = await mainManageService.getDetailNewsReported(slug)
@@ -28,8 +29,7 @@ export default function NewsDetailReported() {
       if (res.success) {
         alert("Đã xác nhận báo cáo tin đăng");
         $(".close").click()
-        let res1 = await mainManageService.getDetailNewsReported(slug)
-        setReport(res1.data)
+        history.push("/main-manager/news-reports")
       }
     }
   }
@@ -41,8 +41,10 @@ export default function NewsDetailReported() {
     if (res.result) {
       $(".close").click()
       alert(res.message);
-      let res1 = await mainManageService.getDetailNews(slug)
-      setReport(res1.data)
+      history.push("/main-manager/news-reports")
+      // let res1 = await mainManageService.getDetailNews(slug)
+      // setReport(res1.data)
+
     }
   }
 
@@ -56,12 +58,12 @@ export default function NewsDetailReported() {
   return (
     <div className="p-2 col-md-12 mx-2">
       <div className='row bg-light mx-1'>
-        <div className="col-md-12">
+        <div className="col-md-12 d-flex mb-3">
           <Link to="/main-manager/news-reports" className='btn btn-warning'>
             Quay lại
           </Link>
 
-          Chi tiết bài đăng
+          <div className="ml-3">Chi tiết bài đăng</div>
         </div>
         <div className="col-md-9 border">
           <div className="row">
@@ -286,7 +288,7 @@ export default function NewsDetailReported() {
             <div className="col-12">
               <div className="form-group">
                 <label><strong>Nội dung</strong> </label>
-                <textarea className="form-control" rows="3" defaultValue={report?.content}></textarea>
+                <textarea className="form-control" rows="3" defaultValue={report?.content} disabled></textarea>
               </div>
             </div>
             <div className="col-12 mb-4">
