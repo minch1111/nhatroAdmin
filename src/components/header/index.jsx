@@ -52,10 +52,10 @@ export default function Header() {
                 {/* <li className="nav-item dropdown no-arrow mx-1">
                     <a className="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i className="fas fa-bell fa-fw" />
-                    
+
                         <span className="badge badge-danger badge-counter">3+</span>
                     </a>
-                    
+
                     <div className="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
                         <h6 className="dropdown-header">
                             Alerts Center
@@ -163,8 +163,8 @@ export default function Header() {
                         <img className="img-profile rounded-circle" src="img/undraw_profile.svg" />
                     </a>
                     {/* Dropdown - User Information */}
-                    <div className="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                        <a className="dropdown-item" href="#">
+                    <div className="dropdown-menu shadow animated--grow-in" aria-labelledby="userDropdown" style={{left:"-120px",top:"55px"}}>
+                        {/* <a className="dropdown-item" href="#">
                             <i className="fas fa-user fa-sm fa-fw mr-2 text-gray-400" />
                             Profile
                         </a>
@@ -175,7 +175,7 @@ export default function Header() {
                         <a className="dropdown-item" href="#">
                             <i className="fas fa-list fa-sm fa-fw mr-2 text-gray-400" />
                             Activity Log
-                        </a>
+                        </a> */}
                         <div className="dropdown-divider" />
                         <Link className="dropdown-item" to="#" onClick={(ev)=>{ev.preventDefault();logout();}} data-toggle="modal" data-target="#logoutModal">
                             <i className="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400" />

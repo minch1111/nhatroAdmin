@@ -22,7 +22,7 @@ export default function Login() {
                                 <div className="col-lg-6">
                                     <div className="p-5">
                                         <div className="text-center">
-                                            <h1 className="h4 text-gray-900 mb-4">Welcome to Pet Paradise Administrator!</h1>
+                                            <h1 className="h4 text-gray-900 mb-4">Welcome to NhaTroVN Administrator!</h1>
                                         </div>
                                         <form onSubmit={handleSubmit(submit)} className="user">
                                             {
