@@ -44,13 +44,12 @@ export default function Home() {
     return (
         <div className="container-fluid">
             {/* Page Heading */}
-            <div className="d-sm-flex align-items-center justify-content-between mb-4">
+            {/* <div className="d-sm-flex align-items-center justify-content-between mb-4">
                 <h1 className="h3 mb-0 text-gray-800">Thống kê</h1>
                 <a href="#" className="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i className="fas fa-download fa-sm text-white-50" /> Generate Report</a>
-            </div>
+            </div> */}
             {/* Content Row */}
-            <div className="row">
-                {/* Earnings (Monthly) Card Example */}
+            {/* <div className="row">
                 <div className="col-xl-3 col-md-6 mb-4">
                     <div className="card border-left-primary shadow h-100 py-2">
                         <div className="card-body">
@@ -66,9 +65,9 @@ export default function Home() {
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> */}
                 {/* Earnings (Monthly) Card Example */}
-                <div className="col-xl-3 col-md-6 mb-4">
+                {/* <div className="col-xl-3 col-md-6 mb-4">
                     <div className="card border-left-success shadow h-100 py-2">
                         <div className="card-body">
                             <div className="row no-gutters align-items-center">
@@ -83,8 +82,8 @@ export default function Home() {
                             </div>
                         </div>
                     </div>
-                </div>
-                <div className="col-xl-3 col-md-6 mb-4">
+                </div> */}
+                {/* <div className="col-xl-3 col-md-6 mb-4">
                     <div className="card border-left-info shadow h-100 py-2">
                         <div className="card-body">
                             <div className="row no-gutters align-items-center">
@@ -99,7 +98,7 @@ export default function Home() {
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> */}
                 {/* Earnings (Monthly) Card Example */}
                 {/* <div className="col-xl-3 col-md-6 mb-4">
                     <div className="card border-left-info shadow h-100 py-2">
@@ -127,7 +126,7 @@ export default function Home() {
                     </div>
                 </div> */}
                 {/* Pending Requests Card Example */}
-                <div className="col-xl-3 col-md-6 mb-4">
+                {/* <div className="col-xl-3 col-md-6 mb-4">
                     <div className="card border-left-warning shadow h-100 py-2">
                         <div className="card-body">
                             <div className="row no-gutters align-items-center">
@@ -142,16 +141,16 @@ export default function Home() {
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
+                </div> */}
+            {/* </div> */}
             {/* Content Row */}
             <div className="row">
                 {/* Area Chart */}
                 <div className="col-xl-8 col-lg-8">
                     <div className="card shadow mb-4">
                         {/* Card Header - Dropdown */}
-                        <div className="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                            <h6 className="m-0 font-weight-bold text-primary"> Thống kê doanh thu theo Tháng </h6>
+                        {/* <div className="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                            <h6 className="m-0 font-weight-bold text-primary"> Thống kê doanh thu theo Tháng </h6> */}
                             {/* <div className="dropdown no-arrow">
                                 <a className="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <i className="fas fa-ellipsis-v fa-sm fa-fw text-gray-400" />
@@ -166,14 +165,14 @@ export default function Home() {
                             </div> */}
                         </div>
                         {/* Card Body */}
-                        <div className="card-body">
-                            <div className="chart-area">
+                        {/* <div className="card-body">
+                            <div className="chart-area"> */}
                                 {/* <canvas id="myAreaChart" /> */}
-                                <Line ref={chart} data={data} />
+                                {/* <Line ref={chart} data={data} />
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> */}
                 {/* Pie Chart */}
                 {/* <div className="col-xl-4 col-lg-5">
                     <div className="card shadow mb-4">
@@ -212,11 +211,11 @@ export default function Home() {
                 </div> */}
             </div>
             {/* Content Row */}
-            <div className="row">
+            {/* <div className="row"> */}
                 {/* Content Column */}
-                <div className="col-lg-6 mb-4">
+                {/* <div className="col-lg-6 mb-4"> */}
                     {/* Project Card Example */}
-                    <div className="card shadow mb-4">
+                    {/* <div className="card shadow mb-4">
                         <div className="card-header py-3">
                             <h6 className="m-0 font-weight-bold text-primary">Projects</h6>
                         </div>
@@ -242,7 +241,7 @@ export default function Home() {
                                 <div className="progress-bar bg-success" role="progressbar" style={{ width: '100%' }} aria-valuenow={100} aria-valuemin={0} aria-valuemax={100} />
                             </div>
                         </div>
-                    </div>
+                    </div> */}
                     {/* Color System */}
                     {/* <div className="row">
                         <div className="col-lg-6 mb-4">
@@ -342,7 +341,7 @@ export default function Home() {
                         </div>
                     </div>
                 </div> */}
-            </div>
+            {/* </div> */}
         </div>
     )
 }
